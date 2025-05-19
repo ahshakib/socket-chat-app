@@ -7,9 +7,8 @@ const { Server } = require("socket.io")
 const io = new Server(server)
 
 io.on('connection', (socket) => {
-    console.log("New User connected")
-    socket.on('disconnect', () => {
-        console.log("User disconnected")
+    socket.on('chat', (data) => {
+        console.log(data)
     })
 })
 
